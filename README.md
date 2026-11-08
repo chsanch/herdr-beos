@@ -18,7 +18,7 @@ With Herdr running:
 ./install.sh
 ```
 
-The script installs the BeOS shell plus the Files, Changes, and Graph clones, both terminal themes, the layout preview asset, and the layout itself when it is not already installed. It checks all four mods before it finishes.
+The script installs the BeOS shell plus the Files, Changes, and Graph clones, both terminal themes, the layout preview asset, and the layout itself, keeping the terminal colors chosen in the Be menu. It checks all four mods before it finishes.
 
 The installer never touches `keys.json` by itself. To make Ctrl+Tab open the Twitcher in this layout, merge the repository's `keys.json` section into yours:
 
@@ -28,11 +28,19 @@ The installer never touches `keys.json` by itself. To make Ctrl+Tab open the Twi
 
 It adds `layout:beos` bindings (`ctrl-tab` → `beos.twitcher`, `ctrl-shift-tab` → `beos.twitcherPrev`) only when those chords are not already bound there. A key you already bind is kept and reported. Without `--keys`, `keys.json` is not read or written. To try the merge on a copy, point `HERDR_KEYS_FILE` at it.
 
-The installed layout is intentionally treated as user state because the Be menu can rewrite its terminal theme. To replace that existing copy with the repository version, run:
+Each run replaces `layouts/beos.json` with this repository's version but keeps the installed `theme`, because the Be menu stores the person's terminal colors there. To go back to the repository's own layout, theme included:
 
 ```sh
 ./install.sh --layout
 ```
+
+## Updating
+
+```sh
+git pull && ./install.sh
+```
+
+That updates the mods, themes and layout and keeps the terminal colors chosen in the Be menu; it does not touch `keys.json`. `./install.sh --layout` resets the layout to the repository's own (terminal colors follow the system again). The Twitcher shortcut is a one-time `./install.sh --keys`; later updates leave it alone.
 
 ## Startup sound
 

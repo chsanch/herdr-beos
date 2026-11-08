@@ -1,17 +1,18 @@
 #!/bin/sh
 # Copies this repo's mods, themes and preview asset into the Herdr app's home
-# (Herdr's hot reload and image cache don't follow symlinks), and the layout when
-# it isn't there yet: Herdr rewrites the installed layout at run time (the Be
-# menu's terminal colors), so it's yours after the first install. `--layout`
-# replaces it with the repo's. `--keys` merges this repo's keys.json into the
-# installed keys.json without overwriting a key the person already binds; it
-# never runs unless asked. Run again after every edit: Herdr reloads.
+# (Herdr's hot reload and image cache don't follow symlinks). The beos layout is
+# updated too, but its `theme` stays: the Be menu writes the person's terminal
+# colors there. `--layout` resets it to the repo's, theme included. `--keys`
+# merges this repo's keys.json into the installed keys.json without overwriting
+# a key the person already binds; it never runs unless asked. Run again after
+# every edit: Herdr reloads.
 #
-#   ./install.sh                 mods, themes, asset; layout if missing
-#   ./install.sh --layout        also replace the installed beos layout
+#   ./install.sh                 mods, themes, asset; update the layout, keep its theme
+#   ./install.sh --layout        reset the installed beos layout to the repo's
 #   ./install.sh --keys          also merge keys.json's layout:beos section
 #
 # For trying `--keys` on a copy: HERDR_KEYS_FILE=/path/to/keys.json
+# For trying the whole install on a copy: HERDR_APP_HOME=/path/to/home
 set -eu
 repo=$(cd "$(dirname "$0")" && pwd)
 home="${HERDR_APP_HOME:-$HOME/.config/herdr-app}"
@@ -45,9 +46,78 @@ cp "$repo/layouts/beos.svg" "$home/layouts/"
 echo "copied BeOS mods, themes and layouts/beos.svg"
 
 layout="$home/layouts/beos.json"
-if [ ! -e "$layout" ] || [ "$want_layout" = 1 ]; then
+if [ "$want_layout" = 1 ]; then
   cp "$repo/layouts/beos.json" "$layout"
-  echo "copied $layout"
+  echo "reset layouts/beos.json to the repository version"
+else
+  # Merge: the repository layout wins, except for `theme`, which the Be menu
+  # writes into the installed copy (the person's terminal colors).
+  python3 - "$repo/layouts/beos.json" "$layout" <<'PY'
+import json, os, stat, sys, tempfile
+
+src_path, dst_path = sys.argv[1], sys.argv[2]
+with open(src_path, encoding="utf-8") as f:
+    src_text = f.read()
+src = json.loads(src_text)
+
+dst = None
+bad = False
+if os.path.exists(dst_path):
+    try:
+        with open(dst_path, encoding="utf-8") as f:
+            dst = json.load(f)
+        if not isinstance(dst, dict):
+            bad = True
+            dst = None
+    except (OSError, ValueError):
+        bad = True
+
+if dst is None:
+    merged = None
+    colors = None
+else:
+    merged = dict(src)
+    colors = None
+    if "theme" in dst:
+        merged["theme"] = dst["theme"]
+        theme = dst["theme"]
+        if isinstance(theme, dict):
+            colors = "auto"
+        elif theme == "beos":
+            colors = "light"
+        elif theme == "beos-dark":
+            colors = "dark"
+        else:
+            colors = "custom"
+
+if merged is not None and merged == dst:
+    print("layouts/beos.json is up to date" + (f" (kept your terminal colors: {colors})" if colors else ""))
+    raise SystemExit(0)
+
+data = src_text if merged is None else json.dumps(merged, indent=2, ensure_ascii=False) + "\n"
+fmode = stat.S_IMODE(os.stat(dst_path).st_mode) if os.path.exists(dst_path) else 0o644
+fd, tmp = tempfile.mkstemp(dir=os.path.dirname(dst_path) or ".", prefix=".layout-", suffix=".tmp")
+try:
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
+        f.write(data)
+    os.chmod(tmp, fmode)
+    os.replace(tmp, dst_path)
+except BaseException:
+    try:
+        os.unlink(tmp)
+    except OSError:
+        pass
+    raise
+
+if bad:
+    print("layouts/beos.json was not a valid layout; copied the repository version")
+elif merged is None:
+    print("copied layouts/beos.json")
+elif colors:
+    print(f"updated layouts/beos.json (kept your terminal colors: {colors})")
+else:
+    print("updated layouts/beos.json")
+PY
 fi
 
 # Merges the repo's keys.json into the person's, section by section and key by

@@ -65,7 +65,7 @@ A Herdr desktop inspired by BeOS R5 (an independent fan tribute, not affiliated 
 - The file browser caps each folder at 500 entries, the whole tree at 5,000, nesting at 40 levels, and previews at 400,000 characters.
 - `themes/beos.json` and `themes/beos-dark.json` provide terminal ANSI colors plus shared chrome names. Dark chrome explicitly sets `colors.foreground: "#000000"`, `muted: "#707070"`, and `dim: "#707070"`.
 - Art is local SVG: perspective folder, file, disk, terminal, agent, Trash, warning, and information icons. Every SVG root has explicit dimensions. Arimo Regular and Bold are bundled under the SIL OFL.
-- `install.sh` rsyncs all four mods with generated type/config files excluded, copies both themes and `layouts/beos.svg`, conditionally installs the layout, and checks all four mods. `--layout` replaces the installed layout. `--keys` merges the repo's `keys.json` into the installed one, section by section, never overwriting a key already there and reporting a conflict; the merge target is `HERDR_KEYS_FILE` (default `$HERDR_APP_HOME/keys.json`), and without `--keys` the file is untouched. `keys.json` in the repo only carries `layout:beos`: `ctrl-tab` → `beos.twitcher` and `ctrl-shift-tab` → `beos.twitcherPrev`, which override `global`'s `tab.next` / `tab.prev` only while BeOS shows.
+- `install.sh` rsyncs all four mods with generated type/config files excluded, copies both themes and `layouts/beos.svg`, updates the layout, and checks all four mods. Without flags the repository layout wins but the installed `theme` is kept (the Be menu writes the person's terminal colors there); `--layout` resets the layout to the repository's, theme included. `--keys` merges the repo's `keys.json` into the installed one, section by section, never overwriting a key already there and reporting a conflict; the merge target is `HERDR_KEYS_FILE` (default `$HERDR_APP_HOME/keys.json`), and without `--keys` the file is untouched. `keys.json` in the repo only carries `layout:beos`: `ctrl-tab` → `beos.twitcher` and `ctrl-shift-tab` → `beos.twitcherPrev`, which override `global`'s `tab.next` / `tab.prev` only while BeOS shows.
 - No automatic HTTP request is made. In particular, `beos-graph` does not contact `api.github.com` for updates. User-invoked Graph git actions keep their original behavior (for example Fetch can contact configured git remotes); Tracker runs `sh`, PowerShell, and git, and desktop agent commands run only when activated.
 
 ## Watch out
@@ -73,7 +73,7 @@ A Herdr desktop inspired by BeOS R5 (an independent fan tribute, not affiliated 
 - A pane's layout border wraps its header too. To keep the decorator tab unframed, set the pane border and focus width explicitly to `0`; draw the tab itself in the header mod.
 - Removing a layout key does not reset state that Herdr already applied. Give the field an explicit value when the new design needs to override the old one.
 - `app.theme` sets only the light or dark half selected by the current appearance. The Be menu rewrites the layout root when it must change the full auto/light/dark terminal mode.
-- The installed `layouts/beos.json` is mutable state because terminal-color changes rewrite it. A normal install does not replace it; `./install.sh --layout` does.
+- The installed `layouts/beos.json` is merged from the repository on every install but keeps its `theme`, because the Be menu stores the person's terminal colors there; `./install.sh --layout` resets the layout to the repository's, theme included. Nothing is rewritten when the result would equal what is installed.
 - SVG assets need explicit `width` and `height` on the `<svg>` element or Herdr may not draw them.
 - Symlinks break reliable hot reload and image-cache invalidation. Copy the mods and assets with `./install.sh` after every edit.
 - Boot entry detection uses `beos.launch` (estimated app-start epoch), `beos.left` (set by Deskbar lifecycle cleanup), and `beos.bootScreen` (preference). The next Deskbar consumes `beos.left`; a source hot reload does not create it.
@@ -90,7 +90,7 @@ A Herdr desktop inspired by BeOS R5 (an independent fan tribute, not affiliated 
 
 ## Done when
 
-- `./install.sh --layout` ends with `check passed` for `mods/beos`, `mods/beos-files`, `mods/beos-changes`, and `mods/beos-graph`.
+- `./install.sh` (or `./install.sh --layout` for a reset) ends with `check passed` for `mods/beos`, `mods/beos-files`, `mods/beos-changes`, and `mods/beos-graph`.
 - `herdr-app status` reports the `beos` layout with an empty `errors` array.
 - Settings shows the `layouts/beos.svg` preview for BeOS.
 - The focused pane tab is yellow `#ffcb00`; another pane's tab is gray `#e8e8e8`; close and zoom controls work.
