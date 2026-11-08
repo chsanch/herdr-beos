@@ -17,7 +17,6 @@
     {
       "id": "main",
       "type": "column",
-      "window_drag": true,
       "resizable": false,
       "padding": [
         0,
@@ -39,7 +38,8 @@
             "props": {
               "role": "tabstrip"
             }
-          }
+          },
+          "window_drag": true
         },
         {
           "id": "panes",
@@ -84,7 +84,8 @@
             "props": {
               "role": "gap"
             }
-          }
+          },
+          "window_drag": true
         }
       ]
     },
