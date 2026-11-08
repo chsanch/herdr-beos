@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200" shape-rendering="crispEdges">
+  <!-- Herdr BeOS: blue desktop, tabbed terminal panels and the Deskbar. -->
+  <rect width="320" height="200" fill="#336698"/>
+
+  <!-- Stack & Tile tab strip: awake tabs of the space, active one yellow -->
+  <rect x="12" y="7" width="36" height="9" fill="#ffcb00"/>
+  <rect x="12" y="7" width="36" height="1" fill="#ffff1a"/>
+  <rect x="12" y="7" width="1" height="9" fill="#ffff1a"/>
+  <rect x="47" y="7" width="1" height="9" fill="#b78300"/>
+  <rect x="16" y="10" width="5" height="4" fill="#b78300"/>
+  <rect x="24" y="10" width="18" height="2" fill="#000000"/>
+  <rect x="48" y="7" width="28" height="9" fill="#e8e8e8"/>
+  <rect x="48" y="7" width="28" height="1" fill="#ffffff"/>
+  <rect x="48" y="7" width="1" height="9" fill="#ffffff"/>
+  <rect x="75" y="7" width="1" height="9" fill="#a0a0a0"/>
+  <rect x="52" y="10" width="5" height="4" fill="#a0a0a0"/>
+  <rect x="60" y="10" width="12" height="2" fill="#505050"/>
+  <rect x="76" y="7" width="28" height="9" fill="#e8e8e8"/>
+  <rect x="76" y="7" width="28" height="1" fill="#ffffff"/>
+  <rect x="76" y="7" width="1" height="9" fill="#ffffff"/>
+  <rect x="103" y="7" width="1" height="9" fill="#a0a0a0"/>
+  <rect x="80" y="10" width="5" height="4" fill="#a0a0a0"/>
+  <rect x="88" y="10" width="12" height="2" fill="#505050"/>
+
+  <!-- focused terminal panel -->
+  <rect x="12" y="25" width="150" height="150" fill="#ffffff"/>
+  <rect x="12" y="25" width="150" height="1" fill="#000000"/>
+  <rect x="12" y="25" width="1" height="150" fill="#000000"/>
+  <rect x="12" y="174" width="150" height="1" fill="#000000"/>
+  <rect x="161" y="25" width="1" height="150" fill="#000000"/>
+  <rect x="12" y="17" width="76" height="9" fill="#ffcb00"/>
+  <rect x="12" y="17" width="76" height="1" fill="#ffff1a"/>
+  <rect x="12" y="17" width="1" height="9" fill="#ffff1a"/>
+  <rect x="87" y="17" width="1" height="9" fill="#b78300"/>
+  <rect x="16" y="20" width="5" height="4" fill="#b78300"/>
+  <rect x="25" y="20" width="48" height="2" fill="#000000"/>
+  <rect x="20" y="38" width="98" height="3" fill="#202020"/>
+  <rect x="20" y="46" width="124" height="3" fill="#606060"/>
+  <rect x="20" y="54" width="78" height="3" fill="#202020"/>
+  <rect x="20" y="68" width="112" height="3" fill="#336698"/>
+  <rect x="20" y="76" width="66" height="3" fill="#606060"/>
+
+  <!-- second, unfocused terminal panel -->
+  <rect x="176" y="50" width="72" height="125" fill="#ffffff"/>
+  <rect x="176" y="50" width="72" height="1" fill="#000000"/>
+  <rect x="176" y="50" width="1" height="125" fill="#000000"/>
+  <rect x="176" y="174" width="72" height="1" fill="#000000"/>
+  <rect x="247" y="50" width="1" height="125" fill="#000000"/>
+  <rect x="176" y="42" width="56" height="9" fill="#e8e8e8"/>
+  <rect x="176" y="42" width="56" height="1" fill="#ffffff"/>
+  <rect x="176" y="42" width="1" height="9" fill="#ffffff"/>
+  <rect x="231" y="42" width="1" height="9" fill="#a0a0a0"/>
+  <rect x="180" y="45" width="5" height="4" fill="#a0a0a0"/>
+  <rect x="189" y="45" width="34" height="2" fill="#505050"/>
+  <rect x="184" y="62" width="47" height="3" fill="#202020"/>
+  <rect x="184" y="70" width="55" height="3" fill="#606060"/>
+  <rect x="184" y="78" width="39" height="3" fill="#202020"/>
+
+  <!-- Deskbar -->
+  <rect x="260" y="0" width="60" height="103" fill="#d8d8d8"/>
+  <rect x="260" y="0" width="60" height="1" fill="#ffffff"/>
+  <rect x="260" y="0" width="1" height="103" fill="#ffffff"/>
+  <rect x="319" y="0" width="1" height="103" fill="#606060"/>
+  <rect x="260" y="102" width="60" height="1" fill="#606060"/>
+  <!-- He logo -->
+  <rect x="280" y="7" width="5" height="13" fill="#1c3fbf"/>
+  <rect x="290" y="7" width="5" height="13" fill="#1c3fbf"/>
+  <rect x="285" y="12" width="5" height="3" fill="#1c3fbf"/>
+  <rect x="297" y="11" width="10" height="3" fill="#d01010"/>
+  <rect x="297" y="14" width="3" height="5" fill="#d01010"/>
+  <rect x="300" y="18" width="7" height="2" fill="#d01010"/>
+  <rect x="264" y="27" width="52" height="10" fill="#c8c8c8"/>
+  <rect x="267" y="31" width="4" height="4" fill="#d29e00"/>
+  <rect x="301" y="31" width="11" height="2" fill="#000000"/>
+  <rect x="260" y="40" width="60" height="13" fill="#c8c8c8"/>
+  <rect x="264" y="44" width="8" height="5" fill="#e8e8e8" stroke="#606060" stroke-width="1"/>
+  <rect x="275" y="45" width="28" height="2" fill="#404040"/>
+  <rect x="260" y="54" width="60" height="15" fill="#d8d8d8"/>
+  <rect x="264" y="58" width="8" height="6" fill="#ffcb00" stroke="#606060" stroke-width="1"/>
+  <rect x="275" y="60" width="30" height="2" fill="#000000"/>
+  <rect x="260" y="70" width="60" height="13" fill="#c8c8c8"/>
+  <rect x="264" y="74" width="7" height="5" fill="#b8b8b8" stroke="#606060" stroke-width="1"/>
+  <rect x="275" y="75" width="22" height="2" fill="#404040"/>
+  <rect x="264" y="87" width="7" height="7" fill="#b8b8b8" stroke="#606060" stroke-width="1"/>
+  <rect x="275" y="89" width="26" height="2" fill="#404040"/>
+
+  <!-- desktop icons below the Deskbar -->
+  <g stroke="#1a1a1a" stroke-width="1">
+    <path d="M281 117l8-3 6 3-8 4z" fill="#e4e4e4"/><path d="M281 117l6 4v5l-6-3z" fill="#c4c4c4"/><path d="M287 121l8-4v5l-8 4z" fill="#989898"/>
+    <path d="M281 139l8-3 6 3-8 4z" fill="#e8e8e8"/><path d="M281 139l6 4v7l-6-3z" fill="#d0d0d0"/><path d="M287 143l8-4v7l-8 4z" fill="#101820"/>
+    <path d="M281 163l8-3 6 3-8 4z" fill="#e8e8e8"/><path d="M281 163l6 4v7l-6-3z" fill="#d0d0d0"/><path d="M287 167l8-4v7l-8 4z" fill="#101820"/>
+  </g>
+  <rect x="283" y="180" width="10" height="11" fill="#a0a8b0" stroke="#1a1a1a" stroke-width="1"/>
+  <rect x="281" y="178" width="14" height="4" fill="#c8d0d8" stroke="#1a1a1a" stroke-width="1"/>
+</svg>

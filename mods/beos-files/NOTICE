@@ -1,0 +1,10 @@
+Herdr BeOS: beos-files
+
+This mod is derived from the "files" mod shipped with Herdr
+(https://github.com/herdrdev/herdr-app), licensed under the Apache License,
+Version 2.0. Copyright the Herdr authors.
+
+It was cloned with mod.clone and modified for Herdr BeOS (restyled with
+BeOS R5-inspired chrome). The modifications are Copyright 2026 Christian
+Sánchez and are also licensed under the Apache License, Version 2.0; see the
+LICENSE file at the root of this repository.

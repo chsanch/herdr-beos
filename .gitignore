@@ -1,0 +1,4 @@
+# Written by Herdr into mod folders; regenerated on every start.
+*.d.ts
+jsconfig.json
+mods/beos/sounds/*.mp3

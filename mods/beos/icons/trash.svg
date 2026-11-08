@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- A trash can in 3/4 view: ribbed gray bin with a lid. -->
+  <path d="M7 10 L9 27 Q16 30 23 27 L25 10 Z" fill="#a0a8b0" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M12 13 L13 27.5 M16 13.5 L16 28.5 M20 13 L19 27.5" stroke="#6a7078" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M8.5 12 L10 26" stroke="#e0e6ec" stroke-width="1" stroke-linecap="round"/>
+  <ellipse cx="16" cy="9.5" rx="10" ry="3.5" fill="#c8d0d8" stroke="#1a1a1a" stroke-width="1.6"/>
+  <path d="M13 7.2 Q16 4 19 7.2" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+</svg>

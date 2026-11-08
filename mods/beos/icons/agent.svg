@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- An agent: the terminal box with a yellow tab-colored spark on its screen. -->
+  <path d="M4 8 L20 3 L28 7 L28 22 L12 29 L4 24 Z" fill="#8a8a8a" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M4 8 L20 3 L28 7 L12 12 Z" fill="#e8e8e8" stroke="#1a1a1a" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M12 12 L28 7 L28 22 L12 29 Z" fill="#b8b8b8" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M4 8 L12 12 L12 29 L4 24 Z" fill="#d0d0d0" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M14 14 L26 10 L26 20 L14 25 Z" fill="#101820" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M20 12.5 L21.2 16 L24.5 16.2 L21.8 18 L22.6 21.5 L20 19.3 L17.4 21.5 L18.2 18 L15.5 16.2 L18.8 16 Z" fill="#ffcb00" stroke="#7a5a00" stroke-width="0.6" stroke-linejoin="round"/>
+</svg>

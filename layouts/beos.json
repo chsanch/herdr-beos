@@ -1,0 +1,109 @@
+{
+  "id": "root",
+  "type": "row",
+  "background": "#336698",
+  "preview": "layouts/beos.svg",
+  "theme": {
+    "light": "beos",
+    "dark": "beos-dark"
+  },
+  "titlebar": "none",
+  "traffic_lights": [
+    14,
+    14
+  ],
+  "resizable": false,
+  "children": [
+    {
+      "id": "main",
+      "type": "column",
+      "window_drag": true,
+      "resizable": false,
+      "padding": [
+        0,
+        14
+      ],
+      "children": [
+        {
+          "id": "tabstrip",
+          "type": "block",
+          "size": {
+            "px": 36
+          },
+          "padding": [
+            0,
+            58
+          ],
+          "content": {
+            "mod": "beos",
+            "props": {
+              "role": "tabstrip"
+            }
+          }
+        },
+        {
+          "id": "panes",
+          "type": "block",
+          "content": {
+            "tab": "active",
+            "pane": {
+              "gap": 14,
+              "radius": 0,
+              "lone": true,
+              "border": {
+                "width": 0,
+                "color": "#000000"
+              },
+              "focus": {
+                "width": 0,
+                "color": "#000000"
+              },
+              "header": {
+                "content": {
+                  "mod": "beos",
+                  "props": {
+                    "role": "tab"
+                  }
+                },
+                "height": 22,
+                "position": "top",
+                "reveal": "always"
+              },
+              "background": "#00000000"
+            }
+          }
+        },
+        {
+          "id": "bottom",
+          "type": "block",
+          "size": {
+            "px": 36
+          },
+          "content": {
+            "mod": "beos",
+            "props": {
+              "role": "gap"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "sidebar",
+      "type": "block",
+      "size": {
+        "px": 180
+      },
+      "content": {
+        "mod": "beos",
+        "props": {
+          "role": "deskbar"
+        }
+      }
+    }
+  ],
+  "terminal_padding": [
+    5,
+    5
+  ]
+}

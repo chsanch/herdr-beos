@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- A terminal box in 3/4 view: gray case, dark screen with a prompt. -->
+  <path d="M4 8 L20 3 L28 7 L28 22 L12 29 L4 24 Z" fill="#8a8a8a" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M4 8 L20 3 L28 7 L12 12 Z" fill="#e8e8e8" stroke="#1a1a1a" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M12 12 L28 7 L28 22 L12 29 Z" fill="#b8b8b8" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M4 8 L12 12 L12 29 L4 24 Z" fill="#d0d0d0" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M14 14 L26 10 L26 20 L14 25 Z" fill="#101820" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M16 16.5 L18.5 17 L16 19" fill="none" stroke="#40e040" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19.5 19.5 L23 18.3" stroke="#40e040" stroke-width="1.3" stroke-linecap="round"/>
+</svg>

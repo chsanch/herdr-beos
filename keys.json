@@ -1,0 +1,6 @@
+{
+  "layout:beos": {
+    "ctrl-tab": "beos.twitcher",
+    "ctrl-shift-tab": "beos.twitcherPrev"
+  }
+}
